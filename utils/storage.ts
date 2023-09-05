@@ -1,9 +1,13 @@
 const setStorage = (name:string,filterData:string[]) => {
-    localStorage.setItem(name,JSON.stringify(filterData))
+    if (typeof window !== "undefined") {
+        localStorage.setItem(name,JSON.stringify(filterData))
+    }
 }
 const useStorage = (name:string):string[] | null => {
-    if(localStorage.getItem(name) != null){
-        return JSON.parse(localStorage.getItem(name) ?? '');
+    if (typeof window !== "undefined") {
+        if(localStorage.getItem(name) != null){
+            return JSON.parse(localStorage.getItem(name) ?? '');
+        }
     }
     return null;
 }

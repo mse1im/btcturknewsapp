@@ -5,7 +5,7 @@ type StateType = {
 }
 
 const initialState:StateType = {
-    list: JSON.parse(localStorage.getItem('readList')!) ?? []
+    list: typeof window !== 'undefined' ? (JSON.parse(localStorage.getItem('readList')!) ?? '') : null
 }
 
 const readCategorySlice = createSlice({
@@ -18,7 +18,9 @@ const readCategorySlice = createSlice({
             }else {
                 state.list?.push(payload);
             }
-            localStorage.setItem("readList", JSON.stringify(state.list));
+            if (typeof window !== "undefined") {
+                localStorage.setItem("readList", JSON.stringify(state.list));
+            }
         }
     }
 })

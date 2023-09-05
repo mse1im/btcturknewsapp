@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 type StateType = {
-    list: string | null
+    list: string | null | undefined
 }
 
 const initialState:StateType = {
-    list: localStorage.getItem('readDetailList') ?? ''
+    list: typeof window !== 'undefined' ? (localStorage.getItem('readDetailList') ?? '') : null
 }
 
 const detailReadSlice = createSlice({
@@ -14,10 +14,14 @@ const detailReadSlice = createSlice({
     reducers:{
         toggle:(state,{payload}) => {
             if(state.list === payload){
-                localStorage.removeItem('readDetailList');
+                if (typeof window !== "undefined") {
+                    localStorage.removeItem('readDetailList');
+                }
                 state.list = '';
             }else {
-                localStorage.setItem("readDetailList", payload);
+                if (typeof window !== "undefined") {
+                    localStorage.setItem("readDetailList", payload);
+                }
                 state.list = payload;
             }
         }
