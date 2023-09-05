@@ -9,19 +9,19 @@ import Container from "@/layout/container";
 import Card from "./card";
 import { useSelector,useDispatch } from "react-redux";
 import { DispatchType, StateType } from "@/redux/store";
-import { toggle } from "@/redux/readSlice";
+import { toggleCategory } from "@/redux/readCategorySlice";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { IProps } from "@/types/responseNews";
 
 const Slider: FC<IProps> = ({ articles }) => {
-  const { list } = useSelector((state:StateType) => state);
+  const { list } = useSelector((state:StateType) => state.readCategorySlice);
     const dispatch = useDispatch<DispatchType>();
 
     const handleClick = useCallback((e:MouseEvent,author:string) => {
         e.stopPropagation();
-        dispatch(toggle([author]));
+        dispatch(toggleCategory(author));
     },[dispatch])
     
   return (

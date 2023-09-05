@@ -28,6 +28,7 @@ const Category:FC = () => {
         setData(sorted)
         setLoading(false)
       });
+      document.title = "BTCTurk - Category"
   },[url])
 
   // hiçbir bağımlılıklara ihtiyaç duymadan belirli saniyede bir tekrar çalışır yüklenme bittikten sonra interval temizlenir.

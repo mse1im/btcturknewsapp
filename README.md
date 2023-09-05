@@ -27,6 +27,7 @@ and run the development server:
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ## Tech Stack
 
 next: "13.4.19",
@@ -37,8 +38,6 @@ swiper: "^10.2.0",
 typescript: "5.2.2"
 
 ## Folder Structure
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`, `app/category/page.tsx` and `app/category/detail/page.tsx`. The page auto-updates as you edit the file.
 

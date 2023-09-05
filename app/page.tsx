@@ -29,6 +29,7 @@ const HomePage: FC = () => {
         })
         setListedData(filteredData);
         setStorage('filterNames',filterData);
+        document.title = "BTCTurk - Homepage"
     }, [filterData.length]);
 
     return (

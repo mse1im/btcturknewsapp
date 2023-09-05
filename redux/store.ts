@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import readSlice from "./readSlice";
+import readDetailSlice from "./readDetailSlice";
+import readCategorySlice from "./readCategorySlice";
+
 
 export const store = configureStore({
-    reducer:readSlice
+    reducer: {
+        readDetailSlice,
+        readCategorySlice
+    }
 })
 
 export type DispatchType = typeof store.dispatch;

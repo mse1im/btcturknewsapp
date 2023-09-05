@@ -11,7 +11,7 @@ type CardProps = {
     time: string;
     author: string;
     handleClick: (e: MouseEvent, author: string) => void;
-    list: string[];
+    list: string[] | null;
 }
 
 const Card: FC<CardProps> = ({ description, src, title, time, author, handleClick, list }) => {
@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({ description, src, title, time, author, handleClic
                     </div>
                     <div className="info">
                         <div className="read" onClick={(e) => handleClick(e, author)}>
-                            {list.includes(author) ?
+                            {list?.includes(author) ?
                                 <>
                                     <img src='/icon-remove.png' alt="remove list" width="10" height="10" /> Remove my read list
                                 </>

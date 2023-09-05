@@ -43,6 +43,7 @@ const Details: FC = () => {
         setLoading(false);
         setUser(data);
       });
+      document.title = `BTCTurk - ${user.title}`
   }, [query]);
 
   return (

@@ -12,7 +12,7 @@ type CardData = {
     urlToImage: string;
     author: string;
     handleClick: (e: MouseEvent, author: string) => void;
-    list: string[];
+    list: string[] | null
 }
 
 const Card: FC<CardData> = ({ publishedAt, title, urlToImage, author, handleClick, list }) => {
@@ -24,7 +24,7 @@ const Card: FC<CardData> = ({ publishedAt, title, urlToImage, author, handleClic
                     <h3>{title}</h3>
                     <div className="info">
                         <div className="read">
-                            <span onClick={(e) => handleClick(e, author)}>{list.includes(author) ?
+                            <span onClick={(e) => handleClick(e, author)}>{list?.includes(author) ?
                                 <>
                                     <img src='/icon-remove.png' alt="remove list" width="10" height="10" /> Remove my read list
                                 </>
