@@ -1,0 +1,76 @@
+@import "../../app/styles/variables";
+
+.detail-news {
+    padding: 45px 0;
+
+    h1 {
+        color: $main-color;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    figure {
+        padding-bottom: 45px;
+        img {
+            border-radius: 10px;
+            width: 100%;
+            margin: 15px 0;
+
+            @media (width <= $md) {
+                height: 228px;
+            }
+        }
+
+        figcaption {
+            p {
+                color: $gray-color;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-top: 15px;
+
+                .read {
+                    color: $main-color;
+                    font-size: 11px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    svg, img {
+                        margin-right: .5rem;
+                    }
+
+                    img {
+                        width: 10px;
+                        height: 10px;
+                        margin: 0;
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                time {
+                    color: $gray-color;
+                    text-align: right;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}

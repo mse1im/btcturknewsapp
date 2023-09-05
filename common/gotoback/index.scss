@@ -1,0 +1,19 @@
+@import '../../app/styles/variables';
+
+button {
+    border-radius: 10px;
+    border: 1px solid $border-color;
+    background: $main-color;
+    display: flex;
+    padding: 10px 12px;
+    align-items: center;
+    gap: 5px;
+
+    span {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        color: $white-color;
+    }
+}

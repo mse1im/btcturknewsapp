@@ -1,0 +1,79 @@
+@import "../../../app/styles/variables";
+
+.filter {
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        margin:30px 0;
+
+        h1 {
+            border-radius: 15px;
+            background: $box-color;
+            display: flex;
+            padding: 15px;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            color: $main-color;
+            margin-right: 15px;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1 0 0;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                border-radius: 10px;
+                border: 1px solid #DBE5FF;
+                background: #FFF;
+                display: flex;
+                padding: 15px;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+                flex: 1 0 0;
+
+                span {
+                    color: #052C54;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    text-transform: capitalize;
+                }
+
+                svg.active {
+                    display: none;
+                }
+
+                &.active {
+                    border-radius: 10px;
+                    border: 1px solid #DBE5FF;
+                    background: #052C54;
+
+                    svg {
+                        display: none;
+                    }
+
+                    svg.active {
+                        display: flex;
+                    }
+
+                    span {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+}

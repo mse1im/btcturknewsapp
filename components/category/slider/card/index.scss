@@ -1,0 +1,70 @@
+@import "../../../../app/styles/variables";
+
+.slider-card {
+    cursor: pointer;
+    figure {
+        img {
+            border-radius: 10px;
+
+            @media (width <= $md) {
+                height: 228px;
+            }
+        }
+        figcaption {
+            margin-top: 15px;
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                h3 {
+                    color: $main-color;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    margin-bottom: 5px;
+                    @include overflow(3, 60px);
+                }
+
+                p {
+                    color: $gray-color;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    @include overflow(3, 60px);
+                }
+
+            }
+
+            .info {
+                display: flex;
+                padding-top: 15px;
+                align-items: center;
+                justify-content: space-between;
+
+                .read {
+                    color: $main-color;
+                    font-size: 11px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    img {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+
+                time {
+                    color: $gray-color;
+                    text-align: right;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}
